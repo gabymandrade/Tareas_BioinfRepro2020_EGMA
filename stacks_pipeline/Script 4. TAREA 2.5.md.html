@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Script 4. TAREA 2.5.md</title><style></style></head><body id="preview">
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Script_4__TAREA_25_0"></a>Script 4.  TAREA 2.5</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3">src=$HOME/research/project</p>
+<ul>
+<li class="has-line-data" data-line-start="4" data-line-end="5">files=”sample_01</li>
+<li class="has-line-data" data-line-start="5" data-line-end="6">sample_02</li>
+<li class="has-line-data" data-line-start="6" data-line-end="7">sample_03”</li>
+</ul>
+<p class="has-line-data" data-line-start="9" data-line-end="10">Build the catalog; the “&amp;&gt;&gt;” will capture all output and append it to the Log file.</p>
+<pre><code class="has-line-data" data-line-start="12" data-line-end="20">cstacks -g -p 36 -b 1 -n 1 -o $src/stacks $samp &amp;&gt;&gt; $src/stacks/Log
+
+for file in $files
+do
+    sstacks -g -p 36 -b 1 -c $src/stacks/batch_1 \
+             -s $src/stacks/${file} \
+             -o $src/stacks/ &amp;&gt;&gt; $src/stacks/Log
+done 
+</code></pre>
+
+</body></html>
